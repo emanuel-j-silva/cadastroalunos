@@ -10,7 +10,7 @@ public class JPAUtil {
     // Atributo FACTORY, constante, pertencente a esta classe.
     // Só vai criar a EntityManagerFactory apenas uma vez.
     private static final EntityManagerFactory FACTORY =
-            Persistence.createEntityManagerFactory("loja");
+            Persistence.createEntityManagerFactory("cadastroalunos");
 
     public static EntityManager getEntityManager() {
             return FACTORY.createEntityManager();
