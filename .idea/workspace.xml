@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc0df288-0aca-4257-b213-0435d8d2ab01" name="Changes" comment="Estrutura base do Projeto criada">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Utils/JPAUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Utils/JPAUtil.java" afterDir="false" />
+    <list default="true" id="dc0df288-0aca-4257-b213-0435d8d2ab01" name="Changes" comment="Atualização do JPAUtil">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Model/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Model/Aluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +46,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Desktop/IFSP/4º Semestre/PW3S4/loja"
+    "last_opened_file_path": "D:/Desktop/Linguagem Java/springboot"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -62,11 +65,19 @@
       <option name="project" value="LOCAL" />
       <updated>1708786832343</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Atualização do JPAUtil">
+      <created>1708787013211</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708787013211</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Estrutura base do Projeto criada" />
-    <option name="LAST_COMMIT_MESSAGE" value="Estrutura base do Projeto criada" />
+    <MESSAGE value="Atualização do JPAUtil" />
+    <option name="LAST_COMMIT_MESSAGE" value="Atualização do JPAUtil" />
   </component>
 </project>
