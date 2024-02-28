@@ -1,8 +1,14 @@
 package org.example.Model;
 
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 
+@Entity
+@Table(name = "alunos")
 public class Aluno {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String ra;
@@ -69,5 +75,17 @@ public class Aluno {
 
     public void setNota3(BigDecimal nota3) {
         this.nota3 = nota3;
+    }
+
+    @Override
+    public String toString() {
+        return "Aluno{" +
+                "nome='" + nome + '\'' +
+                ", ra='" + ra + '\'' +
+                ", email='" + email + '\'' +
+                ", nota1=" + nota1 +
+                ", nota2=" + nota2 +
+                ", nota3=" + nota3 +
+                '}';
     }
 }
