@@ -5,7 +5,6 @@ import org.example.DAO.AlunoDAO;
 import org.example.Model.Aluno;
 
 import java.util.List;
-import java.util.Optional;
 
 public class AlunoController {
 
@@ -26,6 +25,31 @@ public class AlunoController {
             }
         }catch(NoResultException e){
             System.out.println("Alunos não encontrados!");
+        }
+    }
+
+    public Aluno encontrarPorNome(String nome){
+        return dao.buscarPorNome(nome);
+    }
+
+    public void inserir(Aluno aluno){
+        dao.iniciar();
+        try{
+            dao.cadastrar(aluno);
+            dao.fixar();
+        }catch(Exception e){
+            dao.desfazer();
+            System.out.println("Aluno não cadastrado!");
+        }
+    }
+
+    public void excluir(Aluno aluno){
+        dao.iniciar();
+        try{
+            dao.deletar(aluno);
+            dao.fixar();
+        }catch (Exception e){
+            System.out.println("Aluno não encontrado!");
         }
     }
 

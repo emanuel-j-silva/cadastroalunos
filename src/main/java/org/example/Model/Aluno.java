@@ -79,13 +79,13 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno{" +
-                "nome='" + nome + '\'' +
-                ", ra='" + ra + '\'' +
-                ", email='" + email + '\'' +
-                ", nota1=" + nota1 +
-                ", nota2=" + nota2 +
-                ", nota3=" + nota3 +
-                '}';
+        return "Aluno " +
+                "Nome='" + nome + '\'' +
+                ", RA='" + ra + '\'' +
+                ", e-mail='" + email + '\'' + "\n" +
+                "Nota 1 = " + nota1 +
+                ", Nota 2 = " + nota2 +
+                ", Nota 3 = " + nota3 +
+                "\n";
     }
 }
