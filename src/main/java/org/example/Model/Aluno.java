@@ -79,13 +79,10 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Aluno " +
-                "Nome='" + nome + '\'' +
-                ", RA='" + ra + '\'' +
-                ", e-mail='" + email + '\'' + "\n" +
-                "Nota 1 = " + nota1 +
-                ", Nota 2 = " + nota2 +
-                ", Nota 3 = " + nota3 +
+        return "Nome: " + nome + "\n" +
+                "RA: " + ra + "\n" +
+                "E-mail: " + email + "\n" +
+                "Notas: " + nota1 +  " | " + nota2 + " | " + nota3 +
                 "\n";
     }
 }

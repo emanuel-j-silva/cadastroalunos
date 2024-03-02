@@ -6,7 +6,6 @@ import org.example.Utils.JPAUtil;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class AlunoDAO {
@@ -19,6 +18,9 @@ public class AlunoDAO {
 
     public void cadastrar(Aluno aluno){
         this.em.persist(aluno);
+    }
+    public void atualizar(Aluno aluno){
+        this.em.merge(aluno);
     }
 
     public void deletar(Aluno aluno){

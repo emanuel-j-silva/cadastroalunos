@@ -24,12 +24,29 @@ public class AlunoController {
                 System.out.println(a);
             }
         }catch(NoResultException e){
+            System.out.println("Alunos aprovados não encontrados!");
+        }
+    }
+
+    public void listTodos(){
+        List<Aluno> todos = dao.buscarTodos();
+        try{
+            for(Aluno a:todos){
+                System.out.println(a);
+            }
+        }catch (NoResultException e){
             System.out.println("Alunos não encontrados!");
         }
     }
 
-    public Aluno encontrarPorNome(String nome){
-        return dao.buscarPorNome(nome);
+    public Aluno encontrarPorNome(String nome) {
+        Aluno aluno = null;
+        try {
+            aluno = dao.buscarPorNome(nome);
+        } catch (Exception e) {
+            System.out.println("Aluno não encontrado!");
+        }
+        return aluno;
     }
 
     public void inserir(Aluno aluno){
@@ -49,7 +66,17 @@ public class AlunoController {
             dao.deletar(aluno);
             dao.fixar();
         }catch (Exception e){
-            System.out.println("Aluno não encontrado!");
+            System.out.println("Aluno não deletado!");
+        }
+    }
+
+    public void atualizar(Aluno aluno){
+        dao.iniciar();
+        try{
+            dao.atualizar(aluno);
+            dao.fixar();
+        }catch (Exception e){
+            System.out.println("Aluno não atualizado!");
         }
     }
 
