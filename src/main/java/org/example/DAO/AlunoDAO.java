@@ -2,7 +2,6 @@ package org.example.DAO;
 
 import jakarta.persistence.EntityManager;
 import org.example.Model.Aluno;
-import org.example.Utils.JPAUtil;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class AlunoDAO {
 
-    private EntityManager em = JPAUtil.getEntityManager();
+    private EntityManager em;
 
     public AlunoDAO(EntityManager em) {
         this.em = em;

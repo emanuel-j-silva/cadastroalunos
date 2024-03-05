@@ -1,6 +1,5 @@
 package org.example;
 
-import jakarta.persistence.EntityManager;
 import org.example.Controller.AlunoController;
 import org.example.DAO.AlunoDAO;
 import org.example.Model.Aluno;
@@ -18,7 +17,6 @@ public class Main {
         SpringApplication.run(Main.class,args);
         AlunoController controller = new AlunoController(new AlunoDAO(JPAUtil.getEntityManager()));
 
-
         Scanner teclado = new Scanner(System.in);
         int option;
         do{
@@ -27,7 +25,7 @@ public class Main {
             System.out.println("2- Excluir aluno");
             System.out.println("3- Alterar aluno");
             System.out.println("4- Buscar aluno pelo nome");
-            System.out.println("5- Listar alunos (com status aprovação");
+            System.out.println("5- Listar todos os alunos (com status aprovação)");
             System.out.println("6- SAIR");
             System.out.print("\n");
             System.out.print("Digite a opção desejada: ");
@@ -63,12 +61,22 @@ public class Main {
                         controller.atualizar(alunoUpdate);
                     }
                     break;
-                case 4:;
+                case 4:
+                    System.out.print("Digite o nome do aluno procurado:");
+                    String nomeDoAluno = teclado.nextLine();
+                    Aluno exibeAluno = controller.encontrarPorNome(nomeDoAluno);
+                    if (exibeAluno != null) System.out.println(exibeAluno);
+                    System.out.print("\n");
+                    break;
                 case 5:
-                    controller.listAprovados();
+                    controller.listStatus();
                     break;
                 case 6:
                     System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Unexpected value: " + option);
+                    break;
             }
         }while(option!=6);
     }

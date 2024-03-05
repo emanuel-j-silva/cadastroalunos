@@ -82,7 +82,6 @@ public class Aluno {
         return "Nome: " + nome + "\n" +
                 "RA: " + ra + "\n" +
                 "E-mail: " + email + "\n" +
-                "Notas: " + nota1 +  " | " + nota2 + " | " + nota3 +
-                "\n";
+                "Notas: " + nota1 +  " | " + nota2 + " | " + nota3;
     }
 }

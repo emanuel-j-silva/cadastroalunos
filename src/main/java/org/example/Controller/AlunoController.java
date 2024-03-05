@@ -4,6 +4,7 @@ import jakarta.persistence.NoResultException;
 import org.example.DAO.AlunoDAO;
 import org.example.Model.Aluno;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class AlunoController {
@@ -17,14 +18,24 @@ public class AlunoController {
         this.dao = dao;
     }
 
-    public void listAprovados(){
-        List<Aluno> aprovados = dao.aprovados();
+    public void listStatus(){
+        List<Aluno> alunos = dao.buscarTodos();
         try{
-            for (Aluno a:aprovados){
+            for (Aluno a:alunos){
+                BigDecimal somaNotas =
+                        new BigDecimal(String.valueOf(a.getNota1().add(a.getNota2().add(a.getNota3()))));
+                BigDecimal media =
+                        new BigDecimal(String.valueOf(somaNotas.divide(BigDecimal.valueOf(3),2)));
                 System.out.println(a);
+                System.out.println(media);
+
+                if (somaNotas.compareTo(new BigDecimal(12)) < 0) System.out.println("Reprovado");
+                else if (somaNotas.compareTo(new BigDecimal(18)) < 0) System.out.println("Recuperação");
+                else System.out.println("Aprovado");
+                System.out.print("\n");
             }
         }catch(NoResultException e){
-            System.out.println("Alunos aprovados não encontrados!");
+            System.out.println("Alunos não encontrados!");
         }
     }
 
@@ -33,6 +44,7 @@ public class AlunoController {
         try{
             for(Aluno a:todos){
                 System.out.println(a);
+                System.out.print("\n");
             }
         }catch (NoResultException e){
             System.out.println("Alunos não encontrados!");
@@ -54,6 +66,7 @@ public class AlunoController {
         try{
             dao.cadastrar(aluno);
             dao.fixar();
+            System.out.println("Aluno inserido com sucesso!");
         }catch(Exception e){
             dao.desfazer();
             System.out.println("Aluno não cadastrado!");
@@ -65,7 +78,9 @@ public class AlunoController {
         try{
             dao.deletar(aluno);
             dao.fixar();
+            System.out.println("Aluno deletado com sucesso!");
         }catch (Exception e){
+            dao.desfazer();
             System.out.println("Aluno não deletado!");
         }
     }
@@ -75,7 +90,9 @@ public class AlunoController {
         try{
             dao.atualizar(aluno);
             dao.fixar();
+            System.out.println("Aluno atualizado com sucesso!");
         }catch (Exception e){
+            dao.desfazer();
             System.out.println("Aluno não atualizado!");
         }
     }
